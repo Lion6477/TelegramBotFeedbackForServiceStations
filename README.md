@@ -18,18 +18,7 @@
 
 ---
 
-## 2. Налаштування Google Docs API
-
-Щоб зберігати відгуки в Google Docs:
-
-1. Перейдіть у [Google Cloud Console](https://console.cloud.google.com/).
-2. Створіть проєкт та увімкніть API Google Docs.
-3. Створіть сервісний акаунт і завантажте ключ у форматі JSON (`sa-key.json`).
-4. Перейменуйте його на `sa-key.json` та помістіть у папку `src/main/resources`.
-
----
-
-## 3. Налаштування .env файлу
+## 2. Налаштування .env файлу
 
 У корені проєкту створіть файл `.env` за зразком `.env.example` і заповніть своїми даними.
 
@@ -59,12 +48,38 @@ TRELLO_CRITICAL_LABEL_IDS=labelId1,labelId2
 ```
 
 ---
+## 3. Налаштування Google Docs API
 
-## 4. Отримання API Trello та ID списку
+Щоб зберігати відгуки в Google Docs:
 
-### 4.1 API Key та Token
+1. Перейдіть у [Google Cloud Console](https://console.cloud.google.com/).
+2. Створіть проєкт та увімкніть API Google Docs.
+3. Створіть сервісний акаунт і завантажте ключ у форматі JSON (`sa-key.json`).
+4. Перейменуйте його на `sa-key.json` та помістіть у папку `src/main/resources`.
 
-1. Перейдіть на [Trello API Key](https://trello.com/app-key).
+---
+
+## 4. Налаштування Telegram Bot
+
+Щоб бот працював, потрібні Telegram Username та Token.
+
+1. Створіть бота через @BotFather у Telegram.
+2. Отримайте **BOT\_USERNAME** та **BOT\_TOKEN**.
+3. Додайте їх у `.env` файл:
+
+```env
+# Telegram Bot
+BOT_USERNAME=your_bot_username
+BOT_TOKEN=your_bot_token
+```
+
+---
+
+## 5. Отримання API Trello та ID списку
+
+### 5.1 API Key та Token
+
+1. Перейдіть на [Trello API Key](https://trello.com/power-ups/admin/new).
 2. Скопіюйте **API Key**.
 3. Натисніть на посилання для генерації **Token**, підтвердіть доступ та збережіть його.
 
@@ -75,7 +90,7 @@ TRELLO_API_KEY=ae639aab4c75aa2ee86eafb4f14b9e15
 TRELLO_API_TOKEN=ded9dde13c993c50661fccdb60a947604b4639a97496227333ea528ed2c83930
 ```
 
-### 4.2 ID списку (List ID)
+### 5.2 ID списку (List ID)
 
 1. Знайдіть `boardId` у URL вашої дошки.
    Приклад: `https://trello.com/b/80WRZ9Xt/sto` → boardId = `80WRZ9Xt`
@@ -97,7 +112,7 @@ TRELLO_API_TOKEN=ded9dde13c993c50661fccdb60a947604b4639a97496227333ea528ed2c8393
 
    → `68bc2a6e9b0ed71abfdff172` — ваш **List ID**.
 
-### 4.3 ID міток
+### 5.3 ID міток
 
 1. Виконайте запит:
 
@@ -113,30 +128,30 @@ TRELLO_API_TOKEN=ded9dde13c993c50661fccdb60a947604b4639a97496227333ea528ed2c8393
 
 ---
 
-## 5. Збірка та запуск з Docker Compose
+## 6. Збірка та запуск з Docker Compose
 
 У проєкті є `docker-compose.yml`, який запускає PostgreSQL, PgAdmin та сам додаток.
 
-### 5.1 Збірка проєкту
+### 6.1 Збірка проєкту
 
 ```bash
 docker compose build
 ```
 
-### 5.2 Запуск проєкту
+### 6.2 Запуск проєкту
 
 ```bash
 docker compose up -d
 ```
 
-### 5.3 Перевірка
+### 6.3 Перевірка
 
 * Додаток: [http://localhost:8080](http://localhost:8080)
 * PgAdmin: [http://localhost:80](http://localhost:80)
 
 ---
 
-## 6. Корисні команди
+## 7. Корисні команди
 
 Зупинити контейнери:
 
