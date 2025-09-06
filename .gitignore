@@ -26,3 +26,4 @@ target*
 .env
 src/main/resources/sa-key.json
 /logs
+src/main/resources/application-dev.properties
