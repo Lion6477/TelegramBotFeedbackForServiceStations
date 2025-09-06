@@ -25,3 +25,4 @@ replay_pid*
 target*
 .env
 src/main/resources/sa-key.json
+/logs
