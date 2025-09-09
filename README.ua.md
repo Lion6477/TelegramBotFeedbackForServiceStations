@@ -1,4 +1,6 @@
-# Telegram Bot Feedback для СТО
+# Telegram Bot Feedback for Service Stations
+
+🌐 Available languages: [English](README.md) | [Українська](README.ua.md)
 
 Цей проєкт — Spring Boot додаток, який приймає відгуки через Telegram-бота, зберігає їх у PostgreSQL, дублює в Google Docs і при критичних оцінках (рівень 4–5) автоматично створює картку в Trello.
 
